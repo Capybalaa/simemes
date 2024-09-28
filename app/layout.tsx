@@ -1,9 +1,11 @@
 import "@razorlabs/wallet-kit/style.css";
 import type { Metadata } from "next";
 
+import dynamic from "next/dynamic";
 import { fontClassNames } from "./fonts";
 import "./globals.css";
-import Providers from "./Providers";
+
+const Providers = dynamic(() => import("./Providers"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Simemes",
