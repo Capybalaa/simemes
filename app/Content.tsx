@@ -15,15 +15,15 @@ export default function Content() {
         alt="logo"
       />
       <div className="flex flex-col gap-6">
-        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-6 flex flex-row justify-between items-center">
+        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Connect X</span>
-          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-4 w-40">
+          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-2 w-40">
             Connect
           </button>
         </div>
-        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-6 flex flex-row justify-between items-center">
+        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Follow Simemes on X</span>
-          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-4 w-40">
+          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-2 w-40">
             Follow
           </button>
         </div>
