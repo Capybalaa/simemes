@@ -15,19 +15,19 @@ export default function Content() {
         alt="logo"
       />
       <div className="flex flex-col gap-6">
-        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
+        <div className="bg-[#FFDB34] text-black text-xl md:text-2xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Connect X</span>
-          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-2 w-40">
+          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-2 w-40 -my-1">
             Connect
           </button>
         </div>
-        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
+        <div className="bg-[#FFDB34] text-black text-xl md:text-2xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Follow Simemes on X</span>
-          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-2 w-40">
+          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-2 w-40 -my-1">
             Follow
           </button>
         </div>
-        <button className="rounded-2xl bg-black text-3xl text-[#FFDB34] font-comic p-4">
+        <button className="rounded-2xl bg-black text-xl md:text-2xl text-[#FFDB34] font-comic p-4">
           Verify & Join Waitlist
         </button>
       </div>
