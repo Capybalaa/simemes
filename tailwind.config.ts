@@ -8,15 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
       backgroundImage: {
         "bg-d": "url(/bg-d.png)",
         "bg-l": "url(/bg-l.png)",
         "bg-m": "url(/bg-m.png)",
         button: "url(/button.png)",
+      },
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        comic: ["var(--font-comic)", "sans-serif"],
       },
     },
   },

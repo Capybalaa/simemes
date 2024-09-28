@@ -1,6 +1,7 @@
 import "@razorlabs/wallet-kit/style.css";
 import type { Metadata } from "next";
 
+import { fontClassNames } from "./fonts";
 import "./globals.css";
 import Providers from "./Providers";
 
@@ -15,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={fontClassNames.join(" ")}>
         <Providers>{children}</Providers>
       </body>
     </html>

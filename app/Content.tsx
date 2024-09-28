@@ -1,23 +1,36 @@
 "use client";
 
-import { SuiConnectButton } from "@razorlabs/wallet-kit";
 import Image from "next/image";
 
 export default function Content() {
   return (
-    <div className="w-dvw h-dvh bg-cover bg-center bg-no-repeat bg-bg-m md:bg-bg-l xl:bg-bg-d ">
-      <header className="flex flex-col md:flex-row items-center justify-between px-4 py-2">
-        <Image
-          className="scale-75 md:scale-90 xl:scale-100"
-          src="/logo.png"
-          alt="logo"
-          width={218}
-          height={80}
-        />
-        <SuiConnectButton>
-          <Image src="/button.png" alt="button" width={320} height={70} />
-        </SuiConnectButton>
-      </header>
+    <div
+      className="min-h-dvh mx-auto xl:max-w-xl bg-no-repeat bg-bottom bg-contain p-10 flex flex-col gap-10"
+      style={{ backgroundImage: "url(/all2.png)" }}
+    >
+      <Image
+        src="/Simemes_logo_White.png"
+        width={6707}
+        height={2147}
+        alt="logo"
+      />
+      <div className="flex flex-col gap-6">
+        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-6 flex flex-row justify-between items-center">
+          <span>Connect X</span>
+          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-4 w-40">
+            Connect
+          </button>
+        </div>
+        <div className="bg-[#FFDB34] text-black text-xl md:text-3xl font-comic border border-black rounded-2xl p-6 flex flex-row justify-between items-center">
+          <span>Follow Simemes on X</span>
+          <button className="rounded-2xl bg-black text-[#FFDB34] font-comic p-4 w-40">
+            Follow
+          </button>
+        </div>
+        <button className="rounded-2xl bg-black text-3xl text-[#FFDB34] font-comic p-4">
+          Verify & Join Waitlist
+        </button>
+      </div>
     </div>
   );
 }
