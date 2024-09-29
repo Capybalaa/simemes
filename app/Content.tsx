@@ -25,7 +25,7 @@ export default function Content() {
         <div className="bg-[#FFDB34] text-black text-xl md:text-2xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Connect X</span>
           <button
-            className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-28 -my-1"
+            className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-28 md:w-32 -my-1"
             onClick={() => signIn("twitter", {})}
             disabled={status === "authenticated"}
           >
@@ -35,7 +35,7 @@ export default function Content() {
         <div className="bg-[#FFDB34] text-black text-xl md:text-2xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Follow Simemes on X</span>
           <Link
-            className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-28 -my-1 text-center"
+            className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-28 md:w-32 -my-1 text-center"
             href="https://x.com/simemesxyz"
             target="_blank"
             onClick={() => setFollowed(true)}
