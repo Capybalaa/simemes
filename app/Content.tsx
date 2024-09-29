@@ -48,7 +48,7 @@ export default function Content() {
           onClick={() => setVerified(true)}
           disabled={status !== "authenticated" || !isFollowed}
         >
-          {isVerified ? "Verified" : "Verify & Join Waitlist"}
+          {isVerified ? "Joined" : "Verify & Join Waitlist"}
         </button>
       </div>
     </div>
