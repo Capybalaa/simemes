@@ -2,9 +2,13 @@
 
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Content() {
   const { status } = useSession();
+  const [isFollowed, setFollowed] = useState(false);
+  const [isVerified, setVerified] = useState(false);
 
   return (
     <div
@@ -21,7 +25,7 @@ export default function Content() {
         <div className="bg-[#FFDB34] text-black text-xl md:text-2xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Connect X</span>
           <button
-            className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-32 -my-1"
+            className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-28 -my-1"
             onClick={() => signIn("twitter", {})}
             disabled={status === "authenticated"}
           >
@@ -30,12 +34,21 @@ export default function Content() {
         </div>
         <div className="bg-[#FFDB34] text-black text-xl md:text-2xl font-comic border border-black rounded-2xl p-4 flex flex-row justify-between items-center">
           <span>Follow Simemes on X</span>
-          <button className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-32 -my-1">
-            Follow
-          </button>
+          <Link
+            className="rounded-xl bg-black text-[#FFDB34] font-comic p-2 w-28 -my-1 text-center"
+            href="https://x.com/simemesxyz"
+            target="_blank"
+            onClick={() => setFollowed(true)}
+          >
+            {isFollowed ? "Followed" : "Follow"}
+          </Link>
         </div>
-        <button className="rounded-2xl bg-black text-xl md:text-2xl text-[#FFDB34] font-comic p-4">
-          Verify & Join Waitlist
+        <button
+          className="rounded-2xl bg-black text-xl md:text-2xl text-[#FFDB34] font-comic p-4 disabled:cursor-not-allowed"
+          onClick={() => setVerified(true)}
+          disabled={status !== "authenticated" || !isFollowed}
+        >
+          {isVerified ? "Verified" : "Verify & Join Waitlist"}
         </button>
       </div>
     </div>
