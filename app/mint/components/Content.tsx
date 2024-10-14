@@ -38,7 +38,7 @@ export default function Content() {
         <div className="h-96" />
         {connected && (
           <button
-            className="bg-sky-500 rounded px-8 py-2 hover:bg-sky-600"
+            className="bg-[#F9D93D] text-2xl rounded-2xl px-8 py-2 text-black font-extrabold border-2 border-black"
             onClick={() => {
               signAndSubmitTransaction({
                 payload: {
@@ -49,10 +49,10 @@ export default function Content() {
               });
             }}
           >
-            Mint
+            Send Your Resume
           </button>
         )}
-        <div className="h-4" />
+        <div className="h-2" />
       </div>
     </div>
   );
