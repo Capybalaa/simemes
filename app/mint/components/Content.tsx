@@ -1,8 +1,15 @@
 "use client";
 
 import { AptosConnectButton, useAptosWallet } from "@razorlabs/wallet-kit";
+import { Inter } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["800"],
+});
 
 const MODULE_ADDRESS =
   "0xbd43be3bd3dafee68063483988e4c503a9dbff9cd8c1f156529bdb12a1bbbbad";
@@ -13,13 +20,16 @@ export default function Content() {
   const [minted, setMinted] = useState(false);
   const connectButton = (
     <AptosConnectButton
+      className={
+        inter.className + " rounded-xl text-2xl font-extrabold text-white"
+      }
       style={
         connected
           ? {}
           : {
-              width: 128,
-              color: "#F9D93D",
-              border: "1px solid #F9D93D",
+              background: "#FFDB34",
+              border: "1px solid black",
+              textShadow: "0 0 2px black",
             }
       }
     >
@@ -38,7 +48,11 @@ export default function Content() {
         <div className="h-96" />
         {connected ? (
           <button
-            className="bg-[#F9D93D] text-2xl rounded-2xl px-8 py-2 text-black font-extrabold border-2 border-black"
+            className={
+              inter.className +
+              " bg-[#FFDB34] text-2xl rounded-2xl px-8 py-2 text-white font-extrabold border-2 border-black"
+            }
+            style={{ textShadow: "0 0 2px black" }}
             onClick={() => {
               setMinting(true);
               signAndSubmitTransaction({
