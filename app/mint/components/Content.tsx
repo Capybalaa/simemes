@@ -34,7 +34,7 @@ export default function Content() {
         </AptosConnectButton>
       </div>
       <div className="flex flex-col mx-auto w-96 items-center justify-end flex-grow">
-        <div className="text-2xl font-bold">Sorry, You Got Liquidated…</div>
+        <div className="text-2xl font-bold">Oops, You Got Liquidated…</div>
         <div className="h-96" />
         {connected && (
           <button
