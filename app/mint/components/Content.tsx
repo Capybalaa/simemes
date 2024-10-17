@@ -1,15 +1,8 @@
 "use client";
 
 import { AptosConnectButton, useAptosWallet } from "@razorlabs/wallet-kit";
-import { Inter } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["800"],
-});
 
 const MODULE_ADDRESS =
   "0xbd43be3bd3dafee68063483988e4c503a9dbff9cd8c1f156529bdb12a1bbbbad";
@@ -18,41 +11,55 @@ export default function Content() {
   const { signAndSubmitTransaction, connected } = useAptosWallet();
   const [minting, setMinting] = useState(false);
   const [minted, setMinted] = useState(false);
-  const connectButton = (
-    <AptosConnectButton
-      className={
-        inter.className + " rounded-xl text-2xl font-extrabold text-white"
-      }
-      style={
-        connected
-          ? {}
-          : {
-              background: "#FFDB34",
-              border: "1px solid black",
-              textShadow: "0 0 2px black",
-            }
-      }
-    >
-      Connect
-    </AptosConnectButton>
-  );
   return (
-    <div className="w-dvw h-dvh relative overflow-hidden flex flex-col">
-      <div className="absolute left-28 bottom-0 h-96 w-full bg-[url(/bg.png)] bg-no-repeat bg-contain bg-bottom -z-10" />
-      <div className="flex flex-row justify-between p-2">
-        <Image src="/logo.png" width={109} height={40} alt="Simemes" />
-        {connectButton}
-      </div>
-      <div className="flex flex-col mx-auto w-96 items-center justify-end flex-grow">
-        <div className="text-2xl font-bold">Oops, You Got Liquidated…</div>
-        <div className="h-96" />
-        {connected ? (
-          <button
-            className={
-              inter.className +
-              " bg-[#FFDB34] text-2xl rounded-2xl px-8 py-2 text-white font-extrabold border-2 border-black"
+    <div
+      className="w-dvw h-dvh bg-no-repeat bg-bottom relative bg-175% sm:bg-150% md:bg-125% lg:bg-100%"
+      style={{ backgroundImage: "url(/mint/bg.png)" }}
+    >
+      <header className="flex flex-col sm:flex-row justify-between px-8 py-4">
+        <Image
+          className="h-[60px] w-[163px]"
+          src="/logo.png"
+          width={218}
+          height={80}
+          alt="Simemes"
+        />
+        <AptosConnectButton
+          style={
+            connected
+              ? {}
+              : {
+                  backgroundImage: "url(/mint/connect-button.png)",
+                  width: "280px",
+                  height: "60px",
+                  fontSize: "0px",
+                }
+          }
+        />
+      </header>
+      <div className="absolute w-fit left-1/2 -translate-x-1/2 bottom-6">
+        {!connected && (
+          <AptosConnectButton
+            style={
+              connected
+                ? {}
+                : {
+                    backgroundImage: "url(/mint/send-button.png)",
+                    width: "280px",
+                    height: "60px",
+                    fontSize: "0px",
+                  }
             }
-            style={{ textShadow: "0 0 2px black" }}
+          />
+        )}
+        {connected && (
+          <button
+            style={{
+              backgroundImage: "url(/mint/send-button.png)",
+              width: "280px",
+              height: "60px",
+              fontSize: "0px",
+            }}
             onClick={() => {
               setMinting(true);
               signAndSubmitTransaction({
@@ -66,13 +73,8 @@ export default function Content() {
                 .finally(() => setMinting(false));
             }}
             disabled={minting || minted}
-          >
-            {minting ? "Sending..." : minted ? "Sent!" : "Send Your Resume"}
-          </button>
-        ) : (
-          connectButton
+          />
         )}
-        <div className="h-2" />
       </div>
     </div>
   );

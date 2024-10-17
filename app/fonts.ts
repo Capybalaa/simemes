@@ -1,4 +1,4 @@
-import { Comic_Neue } from "next/font/google";
+import { Comic_Neue, Inter } from "next/font/google";
 
 export const comic = Comic_Neue({
   subsets: ["latin"],
@@ -6,4 +6,10 @@ export const comic = Comic_Neue({
   weight: "700",
 });
 
-export const fontClassNames = [comic.variable];
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "800", "900"],
+});
+
+export const fontClassNames = [comic.variable, inter.variable];
