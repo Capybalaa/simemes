@@ -9,6 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.35.0",
+    "@aptos-labs/wallet-adapter-mui-design": "^3.0.25",
+    "@aptos-labs/wallet-adapter-react": "^3.7.11",
+    "@bitget-wallet/aptos-wallet-adapter": "^0.1.2",
+    "@okwallet/aptos-wallet-adapter": "^0.0.7",
+    "@tanstack/react-query": "^5.66.0",
+    "keyv": "4.5.4",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

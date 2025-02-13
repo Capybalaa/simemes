@@ -1,5 +1,6 @@
 'use client'
 
+import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 import { useState } from 'react'
 import Milestone from './components/Milestone'
@@ -7,6 +8,19 @@ import RegisterModal from './components/RegisterModal'
 
 export default function Home() {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
+
+  const { data } = useQuery({
+    queryKey: [
+      'https://waitlist-api-692867198262.us-west1.run.app/waitlist/count',
+    ],
+    queryFn: async ({ queryKey }) => {
+      const resp = await fetch(queryKey[0])
+      if (!resp.ok) {
+        throw new Error('Failed to fetch waitlist count')
+      }
+      return resp.json()
+    },
+  })
 
   return (
     <div className="grow relative flex flex-col items-center justify-center">

@@ -1,12 +1,56 @@
-import '@aptos-labs/wallet-adapter-ant-design/dist/index.css'
+import { WalletConnector } from '@aptos-labs/wallet-adapter-mui-design'
+import { useWallet } from '@aptos-labs/wallet-adapter-react'
+import { useMutation } from '@tanstack/react-query'
 import Image from 'next/image'
-
+import { useState } from 'react'
 export interface RegisterModalProps {
   isOpen: boolean
   onClose: () => void
 }
 
 export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
+  const { account, connected, signMessage } = useWallet()
+
+  const [email, setEmail] = useState('')
+
+  const { mutate: joinWaitlist } = useMutation({
+    mutationFn: async () => {
+      if (!email || !account) return
+
+      const message = `I would like to join the SIMemes waitlist. My email is ${email}. My wallet is ${account.address}`
+
+      const signature = await signMessage({
+        message,
+        nonce: Date.now().toString(),
+      })
+
+      const resp = await fetch(
+        'https://waitlist-api-692867198262.us-west1.run.app/waitlist',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email,
+            walletAddress: account.address,
+            publicKey: account.publicKey,
+            signature: signature.signature,
+            message: signature.message,
+          }),
+        }
+      )
+
+      if (!resp.ok) {
+        alert('Failed to join waitlist')
+        return
+      }
+
+      alert('Successfully joined waitlist')
+      onClose()
+    },
+  })
+
   if (!isOpen) return null
 
   return (
@@ -30,6 +74,8 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             className="bg-[#FAFDFB] border rounded-lg px-5 py-1.5"
             type="email"
             placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -37,14 +83,13 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             2. Connect Aptos Move Wallet
           </label>
           <div className="text-center">
-            <button className="capitalize text-2xl text-white font-bebas-neue bg-[#52362E] rounded-lg w-fit px-5 py-1.5 cursor-pointer">
-              connect
-            </button>
+            <WalletConnector />
           </div>
         </div>
         <button
           className="capitalize text-2xl text-white font-bebas-neue bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-          disabled
+          disabled={!connected || !email}
+          onClick={() => joinWaitlist()}
         >
           join waitlist
         </button>
