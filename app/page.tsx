@@ -1,7 +1,13 @@
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react'
 import Milestone from './components/Milestone'
+import RegisterModal from './components/RegisterModal'
 
 export default function Home() {
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
+
   return (
     <div className="grow relative flex flex-col items-center justify-center">
       <Image
@@ -47,7 +53,10 @@ export default function Home() {
           What happens in SIMemes <br />
           Stay in SIMemes
         </h2>
-        <button className="bg-[url(/button-y.png)] bg-contain bg-center bg-no-repeat w-full xl:w-[521px] h-[52px] xl:h-[100px]">
+        <button
+          className="bg-[url(/button-y.png)] bg-contain bg-center bg-no-repeat w-full xl:w-[521px] h-[52px] xl:h-[100px] cursor-pointer"
+          onClick={() => setIsRegisterModalOpen(true)}
+        >
           <span
             className="font-bebas-neue text-3xl text-white"
             style={{
@@ -59,6 +68,10 @@ export default function Home() {
           </span>
         </button>
       </div>
+      <RegisterModal
+        isOpen={isRegisterModalOpen}
+        onClose={() => setIsRegisterModalOpen(false)}
+      />
     </div>
   )
 }
