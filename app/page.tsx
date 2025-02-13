@@ -9,7 +9,7 @@ import RegisterModal from './components/RegisterModal'
 export default function Home() {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
 
-  const { data } = useQuery({
+  const { data: { count = 0 } = {} } = useQuery({
     queryKey: [
       'https://waitlist-api-692867198262.us-west1.run.app/waitlist/count',
     ],
@@ -18,7 +18,7 @@ export default function Home() {
       if (!resp.ok) {
         throw new Error('Failed to fetch waitlist count')
       }
-      return resp.json()
+      return resp.json() as Promise<{ count: number }>
     },
   })
 

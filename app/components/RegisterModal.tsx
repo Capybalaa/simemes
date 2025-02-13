@@ -13,13 +13,16 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
 
   const [email, setEmail] = useState('')
 
-  const { mutate: joinWaitlist } = useMutation({
+  const { mutate: joinWaitlist, isSuccess } = useMutation({
     mutationFn: async () => {
       if (!email || !account) return
 
       const message = `I would like to join the SIMemes waitlist. My email is ${email}. My wallet is ${account.address}`
 
       const signature = await signMessage({
+        address: true,
+        application: true,
+        chainId: true,
         message,
         nonce: Date.now().toString(),
       })
@@ -35,8 +38,8 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             email,
             walletAddress: account.address,
             publicKey: account.publicKey,
-            signature: signature.signature,
-            message: signature.message,
+            signature: signature.signature.toString(),
+            message: signature.fullMessage,
           }),
         }
       )
@@ -45,9 +48,6 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
         alert('Failed to join waitlist')
         return
       }
-
-      alert('Successfully joined waitlist')
-      onClose()
     },
   })
 
@@ -55,44 +55,84 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
 
   return (
     <div className="fixed top-0 left-0 w-dvw h-dvh bg-black/40 flex items-center justify-center z-50 backdrop-blur-xs">
-      <div className="flex flex-col gap-8 p-10 bg-[#FFDC30] border border-[#52362E] rounded-[20px] relative">
-        <button onClick={onClose}>
+      <div className="bg-[#FFDC30] border border-[#52362E] rounded-[20px] relative overflow-hidden">
+        <button className="absolute top-2 right-2" onClick={onClose}>
           <Image
-            className="w-8 h-8 absolute top-2 right-2"
+            className="w-8 h-8"
             src="/close.png"
             alt="close"
             width={80}
             height={80}
           />
         </button>
-        <h1 className="text-[40px] font-bebas-neue">Join SIMemes waitlist</h1>
-        <div className="flex flex-col gap-2">
-          <label className="text-2xl font-bebas-neue">
-            1. Enter your email
-          </label>
-          <input
-            className="bg-[#FAFDFB] border rounded-lg px-5 py-1.5"
-            type="email"
-            placeholder="Your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-2xl font-bebas-neue">
-            2. Connect Aptos Move Wallet
-          </label>
-          <div className="text-center">
-            <WalletConnector />
+        {!isSuccess && (
+          <div className="flex flex-col gap-8 p-10">
+            <h1 className="text-[40px] font-bebas-neue">
+              Join SIMemes waitlist
+            </h1>
+            <div className="flex flex-col gap-2">
+              <label className="text-2xl font-bebas-neue">
+                1. Enter your email
+              </label>
+              <input
+                className="bg-[#FAFDFB] border rounded-lg px-5 py-1.5"
+                type="email"
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-2xl font-bebas-neue">
+                2. Connect Aptos Move Wallet
+              </label>
+              <div className="text-center">
+                <WalletConnector />
+              </div>
+            </div>
+            <button
+              className="capitalize text-2xl text-white font-bebas-neue bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+              disabled={!connected || !email}
+              onClick={() => joinWaitlist()}
+            >
+              join waitlist
+            </button>
           </div>
-        </div>
-        <button
-          className="capitalize text-2xl text-white font-bebas-neue bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-          disabled={!connected || !email}
-          onClick={() => joinWaitlist()}
-        >
-          join waitlist
-        </button>
+        )}
+        {isSuccess && (
+          <div className="flex flex-col gap-2">
+            <Image
+              className="max-w-[435px] w-full"
+              src="/registered.png"
+              width={870}
+              height={480}
+              alt="registered"
+            />
+            <div className="flex flex-col gap-10 px-10 pb-10">
+              <h1 className="text-[40px] font-bebas-neue">
+                You're on the waitlist!
+              </h1>
+              <div className="flex flex-col gap-4">
+                <input
+                  className="bg-[#FAFDFB] border rounded-lg px-5 py-1.5"
+                  placeholder={email || 'email'}
+                  disabled
+                />
+                <input
+                  className="bg-[#FAFDFB] border rounded-lg px-5 py-1.5"
+                  placeholder={`${account?.address.slice(0, 6)}...${account?.address.slice(-4)}`}
+                  disabled
+                />
+              </div>
+              <button
+                className="text-2xl text-white font-bebas-neue bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+                onClick={() => joinWaitlist()}
+              >
+                Flush the toilet now
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
