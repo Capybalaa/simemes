@@ -3,11 +3,14 @@
 import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 import { useState } from 'react'
+import AfterRegisterPopup from './components/AfterRegisterPopup'
 import Milestone from './components/Milestone'
 import RegisterModal from './components/RegisterModal'
 
 export default function Home() {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
+  const [isAfterRegisterPopupOpen, setIsAfterRegisterPopupOpen] =
+    useState(false)
 
   const { data: { count = 0 } = {} } = useQuery({
     queryKey: [
@@ -98,6 +101,11 @@ export default function Home() {
       <RegisterModal
         isOpen={isRegisterModalOpen}
         onClose={() => setIsRegisterModalOpen(false)}
+        onSuccess={() => setIsAfterRegisterPopupOpen(true)}
+      />
+      <AfterRegisterPopup
+        isOpen={isAfterRegisterPopupOpen}
+        onClose={() => setIsAfterRegisterPopupOpen(false)}
       />
     </div>
   )

@@ -55,7 +55,7 @@ export default function RootLayout({
                 <Link href="#">
                   <Image
                     className="w-12 h-12"
-                    src="/social-tg.png"
+                    src="/social-discord.png"
                     alt="x"
                     width={96}
                     height={96}

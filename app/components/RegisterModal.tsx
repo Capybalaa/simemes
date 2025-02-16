@@ -2,18 +2,25 @@ import { WalletConnector } from '@aptos-labs/wallet-adapter-mui-design'
 import { useWallet } from '@aptos-labs/wallet-adapter-react'
 import { useMutation } from '@tanstack/react-query'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 export interface RegisterModalProps {
   isOpen: boolean
   onClose: () => void
+  onSuccess: () => void
 }
 
-export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
+export default function RegisterModal({
+  isOpen,
+  onClose,
+  onSuccess,
+}: RegisterModalProps) {
   const { account, connected, signMessage } = useWallet()
 
   const [email, setEmail] = useState('')
 
-  const { mutate: joinWaitlist, isSuccess } = useMutation({
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const { mutate: joinWaitlist } = useMutation({
     mutationFn: async () => {
       if (!email || !account) return
 
@@ -48,8 +55,16 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
         alert('Failed to join waitlist')
         return
       }
+
+      setIsSuccess(true)
     },
   })
+
+  useEffect(() => {
+    if (isSuccess) {
+      onSuccess()
+    }
+  }, [isSuccess])
 
   if (!isOpen) return null
 
@@ -110,7 +125,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             />
             <div className="flex flex-col gap-10 px-10 pb-10">
               <h1 className="text-[40px] font-bebas-neue">
-                You're on the waitlist!
+                You&apos;re on the waitlist!
               </h1>
               <div className="flex flex-col gap-4">
                 <input
