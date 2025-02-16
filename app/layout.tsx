@@ -39,8 +39,8 @@ export default function RootLayout({
               />
               <div className="grow" />
               <div className="hidden xl:flex flex-row items-center gap-10 capitalize text-[32px] font-bebas-neue">
-                <Link href="#">story</Link>
-                <Link href="#">about</Link>
+                <Link href="/story">story</Link>
+                <Link href="/about">about</Link>
                 <Link href="#">
                   <Image
                     className="w-12 h-12"
