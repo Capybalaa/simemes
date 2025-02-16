@@ -31,11 +31,12 @@ export default function Milestone({ value, steps }: MilestoneProps) {
             {step.bonus && (
               <div
                 className={[
-                  'absolute left-1/2 -translate-x-1/2 flex flex-row items-center gap-2 bg-black/50 rounded-full p-2',
-                  isOdd ? '-top-16' : '-bottom-16',
+                  'absolute flex flex-row items-center gap-2 bg-black/50 rounded-full p-2',
+                  'xl:left-1/2 xl:-translate-x-1/2',
+                  isOdd ? 'right-18 xl:-top-16' : 'left-18 xl:-bottom-16',
                 ].join(' ')}
               >
-                <div className="w-7 h-7">
+                <div className="w-4 xl:w-7 h-4 xl:h-7">
                   <Image
                     src={
                       active
@@ -49,7 +50,7 @@ export default function Milestone({ value, steps }: MilestoneProps) {
                 </div>
                 <span
                   className={[
-                    'text-sm font-bebas-neue whitespace-nowrap',
+                    'text-xs xl:text-sm font-bebas-neue whitespace-nowrap',
                     active ? 'text-[#30FF0E]' : 'text-[#B0B0B0]',
                   ].join(' ')}
                 >
