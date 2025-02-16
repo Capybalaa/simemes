@@ -52,7 +52,7 @@ export default function Home() {
       />
       <Image
         className={[
-          'w-[491px] h-[316px] absolute top-10',
+          'w-[491px] h-[316px] absolute top-50',
           '-left-6 xl:left-10',
           'origin-top-left',
           'scale-50 xl:scale-100',

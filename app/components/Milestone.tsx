@@ -33,7 +33,9 @@ export default function Milestone({ value, steps }: MilestoneProps) {
                 className={[
                   'absolute flex flex-row items-center gap-2 bg-black/50 rounded-full p-2',
                   'xl:left-1/2 xl:-translate-x-1/2',
-                  isOdd ? 'right-18 xl:-top-16' : 'left-18 xl:-bottom-16',
+                  isOdd
+                    ? 'right-18 xl:-top-16 xl:right-auto'
+                    : 'left-18 xl:-bottom-16',
                 ].join(' ')}
               >
                 <div className="w-4 xl:w-7 h-4 xl:h-7">
