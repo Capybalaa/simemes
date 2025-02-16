@@ -8,6 +8,8 @@ import { createPortal } from 'react-dom'
 export default function MenuDrawer() {
   const [isOpen, setIsOpen] = useState(false)
 
+  if (typeof document === 'undefined') return null
+
   return (
     <>
       <button onClick={() => setIsOpen(true)}>

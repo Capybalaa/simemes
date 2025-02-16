@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
-import MenuDrawer from './components/MenuDrawer'
 import QueryProvider from './components/QueryProvider'
 import WalletProvider from './components/WalletProvider'
 import './fonts'
 import './globals.css'
+
+const MenuDrawer = dynamic(() => import('./components/MenuDrawer'))
 
 export const metadata: Metadata = {
   title: 'Simemes',
