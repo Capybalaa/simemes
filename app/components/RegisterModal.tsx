@@ -72,7 +72,7 @@ export default function RegisterModal({
     if (isSuccess) {
       onSuccess()
     }
-  }, [isSuccess])
+  }, [isSuccess, onSuccess])
 
   if (!isOpen) return null
 
