@@ -2,12 +2,15 @@ import { WalletConnector } from '@aptos-labs/wallet-adapter-mui-design'
 import { useWallet } from '@aptos-labs/wallet-adapter-react'
 import { useMutation } from '@tanstack/react-query'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 export interface RegisterModalProps {
   isOpen: boolean
   onClose: () => void
   onSuccess: () => void
 }
+
+const emailRegex =
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 
 export default function RegisterModal({
   isOpen,
@@ -19,6 +22,11 @@ export default function RegisterModal({
   const [email, setEmail] = useState('')
 
   const [isSuccess, setIsSuccess] = useState(false)
+
+  const isValidEmail = useMemo(
+    () => email.length === 0 || emailRegex.test(email),
+    [email]
+  )
 
   const { mutate: joinWaitlist } = useMutation({
     mutationFn: async () => {
@@ -96,6 +104,9 @@ export default function RegisterModal({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              {!isValidEmail && (
+                <p className="text-red-600 text-sm">*Error handle</p>
+              )}
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-2xl font-bebas-neue">
