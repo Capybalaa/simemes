@@ -30,13 +30,15 @@ export default function RootLayout({
                 'sticky top-0 z-10',
               ].join(' ')}
             >
-              <Image
-                className="w-[163px] h-[60px] z-10"
-                src="/logo.png"
-                alt="simemes"
-                width={326}
-                height={120}
-              />
+              <Link href="/" className="z-10">
+                <Image
+                  className="w-[163px] h-[60px]"
+                  src="/logo.png"
+                  alt="simemes"
+                  width={326}
+                  height={120}
+                />
+              </Link>
               <div className="grow" />
               <div className="hidden xl:flex flex-row items-center gap-10 capitalize text-[32px] font-bebas-neue">
                 <Link href="/story">story</Link>

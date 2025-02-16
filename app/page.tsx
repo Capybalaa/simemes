@@ -59,8 +59,21 @@ export default function Home() {
         height={632}
         alt="candy"
       />
-      <div className="py-10">
-        <Milestone value={2500} steps={[1000, 2000, 3000, 4000, 5000]} />
+      <div className="py-10 z-10">
+        <Milestone
+          value={count}
+          steps={[
+            { value: 10_000, label: '10K', bonus: 'Pebbles x50' },
+            { value: 100_000, label: '100K', bonus: 'Poop x1000' },
+            {
+              value: 250_000,
+              label: '250K',
+              bonus: 'SIMemes buddy limited edition',
+            },
+            { value: 500_000, label: '500K', bonus: 'Chest vouchers x20' },
+            { value: 1_000_000, label: '1M', bonus: '1 % Token allocation' },
+          ]}
+        />
       </div>
       <div className="p-4 xl:p-10 xl:absolute xl:left-0 xl:bottom-0 mb-54 xl:mb-0">
         <h2 className="font-bebas-neue text-3xl xl:text-5xl mb-2">
