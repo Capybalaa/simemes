@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col">
+      <body className="bg-[url(/bg.jpg)] bg-cover bg-center grow flex flex-col overflow-y-auto h-dvh">
         <QueryProvider>
           <WalletProvider>
             <header
@@ -29,7 +29,7 @@ export default function RootLayout({
                 'relative bg-[#FAFDFB] border-b-2 border-[#9A776D] w-full h-14 xl:h-[100px]',
                 'after:bg-[#F2EFEA] after:h-5 after:w-full after:absolute after:bottom-0 after:left-0',
                 'flex flex-row items-center px-4 xl:px-10',
-                'sticky top-0 z-10',
+                'sticky top-0 z-40',
               ].join(' ')}
             >
               <Link href="/" className="z-10">
@@ -43,8 +43,8 @@ export default function RootLayout({
               </Link>
               <div className="grow" />
               <div className="hidden xl:flex flex-row items-center gap-10 capitalize text-[32px] font-bebas-neue">
-                <Link href="/story">story</Link>
-                <Link href="/about">about</Link>
+                <Link href="#story">story</Link>
+                <Link href="#about">about</Link>
                 <Link href="#">
                   <Image
                     className="w-12 h-12"
@@ -68,9 +68,7 @@ export default function RootLayout({
                 <MenuDrawer />
               </div>
             </header>
-            <div className="bg-[url(/bg.jpg)] bg-cover bg-center grow flex flex-col">
-              {children}
-            </div>
+            {children}
           </WalletProvider>
         </QueryProvider>
       </body>

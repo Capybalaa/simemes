@@ -51,8 +51,12 @@ export default function MenuDrawer() {
               width={326}
               height={120}
             />
-            <Link href="#">story</Link>
-            <Link href="#">about</Link>
+            <Link href="#story" onClick={() => setIsOpen(false)}>
+              story
+            </Link>
+            <Link href="#about" onClick={() => setIsOpen(false)}>
+              about
+            </Link>
             <div className="flex flex-row gap-10">
               <Link href="#">
                 <Image
