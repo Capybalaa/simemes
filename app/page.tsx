@@ -110,9 +110,16 @@ export default function Home() {
         />
       </div>
       <div id="story" className="relative min-h-dvh">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-10 mx-auto py-10 max-w-[1000px] px-10 lg:px-0">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-10 mx-auto py-10 max-w-[1000px] px-10">
           <Image
             className="absolute -top-30 -left-60 scale-75"
+            src="/footprint-bg.png"
+            width={937}
+            height={375}
+            alt="footprint-bg"
+          />
+          <Image
+            className="absolute bottom-40 -right-20 scale-75 origin-right"
             src="/footprint-bg.png"
             width={937}
             height={375}
@@ -135,13 +142,14 @@ export default function Home() {
           <div className="flex flex-col gap-5">
             <h1 className="text-5xl font-bebas-neue">Meet SIMemes</h1>
             <p className="text-2xl font-bebas-neue">
-              Everyone can poop. But it ain’t just poop—it’s the ultimate
-              currency. It fuels the economy, turns actions into opportunities. 
+              Everyone can poop. But it ain&apos;t just poop—it&apos;s the
+              ultimate currency. It fuels the economy, turns actions into
+              opportunities. 
             </p>
             <p className="text-2xl font-bebas-neue">BUT…</p>
             <p className="text-2xl font-bebas-neue">
-              Everyone’s after your poop. It’s scarce, competition is fierce,
-              and every pile matters. After all, nothing is free.
+              Everyone&apos;s after your poop. It&apos;s scarce, competition is
+              fierce, and every pile matters. After all, nothing is free.
             </p>
             <p className="text-2xl font-bebas-neue">
               Farm, level up and steal to get your golden ticket. Start now,
@@ -162,7 +170,7 @@ export default function Home() {
           <h1 className="text-5xl font-bebas-neue">What is SIMemes?</h1>
           <p className="text-2xl font-bebas-neue">
             SIMemes is an AI-driven, meme-powered social IDLE game that blends
-            strategy, humor, and social interaction. It’s a place where
+            strategy, humor, and social interaction. It&apos;s a place where
             collecting poop, defending resources, and leveling up collide with
             the boundless creativity of memes.{' '}
           </p>
@@ -181,14 +189,22 @@ export default function Home() {
                 alt="about"
               />
               <h2 className="text-2xl font-bebas-neue">Poop AI (?)</h2>
+
               <p className="text-lg font-bebas-neue">
-                (PoopAI isn’t just another AI NPC)—he’s the ultimate portal
-                between players and the game.
+                <span className="bg-current hover:bg-transparent transition-all">
+                  (PoopAI isn&apos;t just another AI NPC)
+                </span>
+                —he&apos;s the ultimate portal between players and the game.
               </p>
               <p className="text-lg font-bebas-neue">
-                He manages and adapts from (real-time updates to exclusive
-                events) and partial token management, (all powered by user
-                feedback on social media.)
+                He manages and adapts from{' '}
+                <span className="bg-current hover:bg-transparent transition-all">
+                  (real-time updates to exclusive events)
+                </span>{' '}
+                and partial token management,{' '}
+                <span className="bg-current hover:bg-transparent transition-all">
+                  (all powered by user feedback on social media.)
+                </span>
               </p>
               <p className="text-lg font-bebas-neue">
                 This is what we called community first.
@@ -205,7 +221,7 @@ export default function Home() {
               <h2 className="text-2xl font-bebas-neue">Gameplay</h2>
               <p className="text-lg font-bebas-neue">
                 Every chest, every resource is your chance at fortune—your
-                golden era. it’s all yours for the taking.
+                golden era. it&apos;s all yours for the taking.
               </p>
               <p className="text-lg font-bebas-neue">
                 Riches are free, but so is danger. In SIMemes, fortune favors
@@ -227,14 +243,42 @@ export default function Home() {
                 Friend today, Rivals tomorrow
               </h2>
               <p className="text-lg font-bebas-neue">
-                Steal what you can, protect what’s yours, and betray while you
-                can. 
+                Steal what you can, protect what&apos;s yours, and betray while
+                you can. 
               </p>
               <p className="text-lg font-bebas-neue">
                 You are never safe on things you never own.
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="min-h-dvh flex flex-col items-center justify-center">
+        <div className="flex flex-col xl:flex-row items-center justify-center gap-40 mx-auto p-10 max-w-[1000px]">
+          <div className="flex flex-col gap-4 w-100 shrink-0">
+            <button
+              className="bg-[url(/button-y.png)] bg-contain bg-center bg-no-repeat w-full aspect-[1042/200] cursor-pointer"
+              onClick={() => setIsRegisterModalOpen(true)}
+            >
+              <span
+                className="font-bebas-neue text-3xl text-white"
+                style={{
+                  WebkitTextStroke: '1px #000',
+                  textShadow: '0 2px 0px #000',
+                }}
+              >
+                join waitlist
+              </span>
+            </button>
+            <p>COPYRIGHT © 2025 SIMemes ALL RIGHTS RESERVED ®</p>
+          </div>
+          <Image
+            className="w-full xl:w-[535px]"
+            src="/toilet3.png"
+            alt="toilet"
+            width={535}
+            height={628}
+          />
         </div>
       </div>
     </div>

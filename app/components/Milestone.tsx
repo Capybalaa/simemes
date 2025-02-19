@@ -27,6 +27,7 @@ export default function Milestone({ value, steps }: MilestoneProps) {
               'flex flex-col items-center justify-center font-bebas-neue',
             ].join(' ')}
           >
+            <span className="text-xs leading-2">REGISTRATION</span>
             <span className="text-xl">{step.label}</span>
             {step.bonus && (
               <div

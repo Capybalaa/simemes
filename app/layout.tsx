@@ -26,13 +26,13 @@ export default function RootLayout({
           <WalletProvider>
             <header
               className={[
-                'relative bg-[#FAFDFB] border-b-2 border-[#9A776D] w-full h-14 xl:h-[100px]',
-                'after:bg-[#F2EFEA] after:h-5 after:w-full after:absolute after:bottom-0 after:left-0',
+                'relative bg-[#FAFDFB] border-b-2 border-[#9A776D] w-full h-14 xl:h-25 shrink-0',
+                'after:bg-[#F2EFEA] after:h-5 after:w-full after:absolute after:bottom-0 after:left-0 after:-z-1',
                 'flex flex-row items-center px-4 xl:px-10',
                 'sticky top-0 z-40',
               ].join(' ')}
             >
-              <Link href="/" className="z-10">
+              <Link href="/">
                 <Image
                   className="w-[163px] h-[60px]"
                   src="/logo.png"
