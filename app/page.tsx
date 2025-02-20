@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-20">
-      <div className="h-dvh relative flex flex-col items-center justify-center pt-20">
+      <div className="min-h-dvh relative flex flex-col items-center justify-center pt-20 lg:pt-0">
         <Image
           className={[
             'w-[566px] h-[353px] absolute -right-20 -bottom-20',
@@ -44,7 +44,7 @@ export default function Home() {
             'w-[411px] h-[490px] absolute top-1/2 -translate-y-1/2',
             '-right-20 lg:right-10',
             'origin-right',
-            'scale-50 lg:scale-100',
+            'scale-50 lg:scale-75',
           ].join(' ')}
           src="/toilet.png"
           width={822}
@@ -54,9 +54,9 @@ export default function Home() {
         <Image
           className={[
             'w-[491px] h-[316px] absolute top-10',
-            '-left-6 lg:left-10',
+            '-left-6 lg:left-2/7 lg:-translate-x-1/2',
             'origin-top-left',
-            'scale-50 lg:scale-100',
+            'scale-50 lg:scale-75',
           ].join(' ')}
           src="/candy.png"
           width={982}
@@ -191,18 +191,18 @@ export default function Home() {
               <h2 className="text-2xl">Poop AI (?)</h2>
 
               <p className="text-lg">
-                <span className="bg-current hover:bg-transparent transition-all">
+                <span className="bg-current">
                   (PoopAI isn&apos;t just another AI NPC)
                 </span>
                 —he&apos;s the ultimate portal between players and the game.
               </p>
               <p className="text-lg">
                 He manages and adapts from{' '}
-                <span className="bg-current hover:bg-transparent transition-all">
+                <span className="bg-current">
                   (real-time updates to exclusive events)
                 </span>{' '}
                 and partial token management,{' '}
-                <span className="bg-current hover:bg-transparent transition-all">
+                <span className="bg-current">
                   (all powered by user feedback on social media.)
                 </span>
               </p>
@@ -250,7 +250,7 @@ export default function Home() {
         </div>
       </div>
       <div className="min-h-dvh flex flex-col items-center justify-center">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-40 mx-auto p-10 max-w-[1000px]">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-40 mx-auto p-0 lg:p-10 max-w-[1000px]">
           <div className="flex flex-col gap-4 w-100 shrink-0">
             <button
               className="bg-[url(/button-y.png)] bg-contain bg-center bg-no-repeat w-full aspect-[1042/200] cursor-pointer"
