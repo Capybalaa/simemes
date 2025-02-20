@@ -90,13 +90,9 @@ export default function RegisterModal({
         </button>
         {!isSuccess && (
           <div className="flex flex-col gap-8 p-10">
-            <h1 className="text-[40px] font-bebas-neue">
-              Join SIMemes waitlist
-            </h1>
+            <h1 className="text-[40px]">Join SIMemes waitlist</h1>
             <div className="flex flex-col gap-2">
-              <label className="text-2xl font-bebas-neue">
-                1. Enter your email
-              </label>
+              <label className="text-2xl">1. Enter your email</label>
               <input
                 className="bg-[#FAFDFB] border rounded-lg px-5 py-1.5"
                 type="email"
@@ -109,15 +105,13 @@ export default function RegisterModal({
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-2xl font-bebas-neue">
-                2. Connect Aptos Move Wallet
-              </label>
+              <label className="text-2xl">2. Connect Aptos Move Wallet</label>
               <div className="text-center">
                 <WalletConnector />
               </div>
             </div>
             <button
-              className="capitalize text-2xl text-white font-bebas-neue bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+              className="uppercase text-2xl text-white bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
               disabled={!connected || !email}
               onClick={() => joinWaitlist()}
             >
@@ -135,9 +129,7 @@ export default function RegisterModal({
               alt="registered"
             />
             <div className="flex flex-col gap-10 px-10 pb-10">
-              <h1 className="text-[40px] font-bebas-neue">
-                You&apos;re on the waitlist!
-              </h1>
+              <h1 className="text-[40px]">You&apos;re on the waitlist!</h1>
               <div className="flex flex-col gap-4">
                 <input
                   className="bg-[#FAFDFB] border rounded-lg px-5 py-1.5"
@@ -151,7 +143,7 @@ export default function RegisterModal({
                 />
               </div>
               <button
-                className="text-2xl text-white font-bebas-neue bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+                className="text-2xl text-white bg-[#52362E] rounded-lg px-10 py-3 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
                 onClick={() => joinWaitlist()}
               >
                 Flush the toilet now

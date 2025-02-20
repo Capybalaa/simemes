@@ -31,7 +31,7 @@ export default function MenuDrawer() {
         >
           <div className="bg-[#F2EFEA] h-14 px-4 flex flex-row items-center justify-end">
             <button
-              className="block xl:hidden"
+              className="block lg:hidden"
               onClick={() => setIsOpen(false)}
             >
               <Image
@@ -43,7 +43,7 @@ export default function MenuDrawer() {
               />
             </button>
           </div>
-          <div className="grow flex flex-col gap-10 justify-center items-center capitalize text-[32px] font-bebas-neue py-10">
+          <div className="grow flex flex-col gap-10 justify-center items-center capitalize text-[32px] py-10">
             <Image
               className="w-[163px] h-[60px]"
               src="/logo.png"

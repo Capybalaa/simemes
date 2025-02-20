@@ -51,11 +51,11 @@ export default function AfterRegisterPopup({
       {step === Step.Follow && (
         <div className="bg-[#FFDC30] border border-[#52362E] rounded-[20px] relative overflow-hidden">
           <div className="flex flex-col gap-8 p-10">
-            <h1 className="text-[40px] font-bebas-neue text-center">You Won</h1>
+            <h1 className="text-[40px] text-center">You Won</h1>
             <Image src="/reward.png" alt="reward" width={280} height={200} />
             <div className="flex flex-col gap-2">
               <a
-                className="capitalize text-white! text-2xl text-center font-bebas-neue bg-[#52362E] rounded-lg py-2"
+                className="capitalize text-white! text-2xl text-center bg-[#52362E] rounded-lg py-2"
                 href="https://twitter.com/intent/follow?user_id=1882680412964782080"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -63,7 +63,7 @@ export default function AfterRegisterPopup({
               >
                 follow us
               </a>
-              <p className="text-lg font-bebas-neue text-center">
+              <p className="text-lg text-center">
                 Don&apos;t like your result?
                 <br />
                 Follow us to flush again
@@ -75,11 +75,11 @@ export default function AfterRegisterPopup({
       {step === Step.FlushedAgain && (
         <div className="bg-[#FFDC30] border border-[#52362E] rounded-[20px] relative overflow-hidden">
           <div className="flex flex-col gap-8 p-10">
-            <h1 className="text-[40px] font-bebas-neue text-center">You Won</h1>
+            <h1 className="text-[40px] text-center">You Won</h1>
             <Image src="/reward.png" alt="reward" width={280} height={200} />
             <div className="flex flex-col gap-2">
               <button
-                className="capitalize text-white! text-2xl text-center font-bebas-neue bg-[#52362E] rounded-lg py-2 cursor-pointer"
+                className="capitalize text-white! text-2xl text-center bg-[#52362E] rounded-lg py-2 cursor-pointer"
                 onClick={onClose}
               >
                 FEELS GOOD MAN

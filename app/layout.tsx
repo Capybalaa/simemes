@@ -26,9 +26,9 @@ export default function RootLayout({
           <WalletProvider>
             <header
               className={[
-                'relative bg-[#FAFDFB] border-b-2 border-[#9A776D] w-full h-14 xl:h-25 shrink-0',
+                'relative bg-[#FAFDFB] border-b-2 border-[#9A776D] w-full h-14 lg:h-16 shrink-0',
                 'after:bg-[#F2EFEA] after:h-5 after:w-full after:absolute after:bottom-0 after:left-0 after:-z-1',
-                'flex flex-row items-center px-4 xl:px-10',
+                'flex flex-row items-center px-4 lg:px-10',
                 'sticky top-0 z-40',
               ].join(' ')}
             >
@@ -42,7 +42,7 @@ export default function RootLayout({
                 />
               </Link>
               <div className="grow" />
-              <div className="hidden xl:flex flex-row items-center gap-10 capitalize text-[32px] font-bebas-neue">
+              <div className="hidden lg:flex flex-row items-center gap-10 capitalize text-[32px]">
                 <Link href="#story">story</Link>
                 <Link href="#about">about</Link>
                 <Link href="#">
@@ -64,7 +64,7 @@ export default function RootLayout({
                   />
                 </Link>
               </div>
-              <div className="xl:hidden z-10">
+              <div className="lg:hidden z-10">
                 <MenuDrawer />
               </div>
             </header>

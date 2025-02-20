@@ -8,7 +8,7 @@ export interface MilestoneProps {
 
 export default function Milestone({ value, steps }: MilestoneProps) {
   return (
-    <div className="flex flex-col xl:flex-row gap-1 xl:gap-5 items-center *:shrink-0">
+    <div className="flex flex-col lg:flex-row gap-1 lg:gap-5 items-center *:shrink-0">
       {steps.map((step, index) => {
         const active = step.value <= value
         const next = steps[index + 1] || 0
@@ -20,26 +20,28 @@ export default function Milestone({ value, steps }: MilestoneProps) {
           <div
             key={['step', step].join(':')}
             className={[
-              `relative w-16 h-16 xl:w-20 xl:h-20 rounded-full bg-[#141314]/50 border-[3px]`,
+              `relative w-16 h-16 lg:w-25 lg:h-25 lg:pt-5 rounded-full bg-[#141314]/50 border-[3px]`,
               active
                 ? 'text-[#30FF0E] border-[#30FF0E]'
                 : 'text-white border-[#717171]',
-              'flex flex-col items-center justify-center font-bebas-neue',
+              'flex flex-col items-center justify-center',
             ].join(' ')}
           >
-            <span className="text-xs leading-2">REGISTRATION</span>
+            <span className="hidden lg:inline-block text-xs leading-2 tracking-tighter">
+              REGISTRATION
+            </span>
             <span className="text-xl">{step.label}</span>
             {step.bonus && (
               <div
                 className={[
                   'absolute flex flex-row items-center gap-2 bg-black/50 rounded-full p-2',
-                  'xl:left-1/2 xl:-translate-x-1/2',
+                  'lg:left-1/2 lg:-translate-x-1/2',
                   isOdd
-                    ? 'right-18 xl:-top-16 xl:right-auto'
-                    : 'left-18 xl:-bottom-16',
+                    ? 'right-18 lg:-top-16 lg:right-auto'
+                    : 'left-18 lg:-bottom-16',
                 ].join(' ')}
               >
-                <div className="w-4 xl:w-7 h-4 xl:h-7">
+                <div className="w-4 lg:w-7 h-4 lg:h-7">
                   <Image
                     src={
                       active
@@ -53,7 +55,7 @@ export default function Milestone({ value, steps }: MilestoneProps) {
                 </div>
                 <span
                   className={[
-                    'text-xs xl:text-sm font-bebas-neue whitespace-nowrap',
+                    'text-xs lg:text-sm whitespace-nowrap',
                     active ? 'text-[#30FF0E]' : 'text-[#B0B0B0]',
                   ].join(' ')}
                 >

@@ -3,14 +3,14 @@ import Image from 'next/image'
 export default function Page() {
   return (
     <div className="flex flex-col gap-5 mx-auto p-10 max-w-[1000px]">
-      <h1 className="text-5xl font-bebas-neue">What is SIMemes?</h1>
-      <p className="text-2xl font-bebas-neue">
+      <h1 className="text-5xl">What is SIMemes?</h1>
+      <p className="text-2xl">
         SIMemes is an AI-driven, meme-powered social IDLE game that blends
         strategy, humor, and social interaction. It’s a place where collecting
         poop, defending resources, and leveling up collide with the boundless
         creativity of memes.{' '}
       </p>
-      <p className="text-2xl font-bebas-neue">
+      <p className="text-2xl">
         Think of Farmville meets Tinder with a sprinkle of memes, all wrapped in
         a world where every poop matters. The earlier you join, the more you
         stand to gain. 
@@ -24,19 +24,17 @@ export default function Page() {
             height={480}
             alt="about"
           />
-          <h2 className="text-2xl font-bebas-neue">Poop AI (?)</h2>
-          <p className="text-lg font-bebas-neue">
+          <h2 className="text-2xl">Poop AI (?)</h2>
+          <p className="text-lg">
             (PoopAI isn’t just another AI NPC)—he’s the ultimate portal between
             players and the game.
           </p>
-          <p className="text-lg font-bebas-neue">
+          <p className="text-lg">
             He manages and adapts from (real-time updates to exclusive events)
             and partial token management, (all powered by user feedback on
             social media.)
           </p>
-          <p className="text-lg font-bebas-neue">
-            This is what we called community first.
-          </p>
+          <p className="text-lg">This is what we called community first.</p>
         </div>
         <div>
           <Image
@@ -46,16 +44,16 @@ export default function Page() {
             height={480}
             alt="about"
           />
-          <h2 className="text-2xl font-bebas-neue">Gameplay</h2>
-          <p className="text-lg font-bebas-neue">
+          <h2 className="text-2xl">Gameplay</h2>
+          <p className="text-lg">
             Every chest, every resource is your chance at fortune—your golden
             era. it’s all yours for the taking.
           </p>
-          <p className="text-lg font-bebas-neue">
+          <p className="text-lg">
             Riches are free, but so is danger. In SIMemes, fortune favors the
             wise, not just the bold.
           </p>
-          <p className="text-lg font-bebas-neue">
+          <p className="text-lg">
             Will you protect your chest, or let it slip away?
           </p>
         </div>
@@ -67,15 +65,11 @@ export default function Page() {
             height={480}
             alt="about"
           />
-          <h2 className="text-2xl font-bebas-neue">
-            Friend today, Rivals tomorrow
-          </h2>
-          <p className="text-lg font-bebas-neue">
+          <h2 className="text-2xl">Friend today, Rivals tomorrow</h2>
+          <p className="text-lg">
             Steal what you can, protect what’s yours, and betray while you can. 
           </p>
-          <p className="text-lg font-bebas-neue">
-            You are never safe on things you never own.
-          </p>
+          <p className="text-lg">You are never safe on things you never own.</p>
         </div>
       </div>
     </div>
