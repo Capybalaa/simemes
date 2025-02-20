@@ -80,12 +80,12 @@ export default function Home() {
           />
         </div>
         <div className="p-4 lg:p-10 lg:absolute lg:left-0 lg:bottom-20 mb-54 lg:mb-0">
-          <h2 className="text-3xl lg:text-5xl mb-2">
+          <h2 className="text-2xl lg:text-5xl mb-2">
             What happens in SIMemes <br />
             Stay in SIMemes
           </h2>
           <button
-            className="bg-[url(/button-y.png)] bg-contain bg-center bg-no-repeat w-full lg:w-[521px] h-[52px] lg:h-[100px] cursor-pointer"
+            className="bg-[url(/button-y.png)] bg-auto bg-center bg-no-repeat border-2 border-black rounded-tr-lg w-full lg:w-[521px] h-[52px] lg:h-[100px] cursor-pointer"
             onClick={() => setIsRegisterModalOpen(true)}
           >
             <span

@@ -34,11 +34,11 @@ export default function Milestone({ value, steps }: MilestoneProps) {
             {step.bonus && (
               <div
                 className={[
-                  'absolute flex flex-row items-center gap-2 bg-black/50 rounded-full p-2',
+                  'absolute flex flex-row items-center gap-1 bg-black/50 rounded-full p-2 tracking-tighter scale-75 lg:scale-100',
                   'lg:left-1/2 lg:-translate-x-1/2',
                   isOdd
-                    ? 'right-16 lg:-top-16 lg:right-auto'
-                    : 'left-16 lg:-bottom-16',
+                    ? 'right-18 lg:-top-16 lg:right-auto origin-right'
+                    : 'left-18 lg:-bottom-16 origin-left',
                 ].join(' ')}
               >
                 <div className="w-4 lg:w-7 h-4 lg:h-7">
