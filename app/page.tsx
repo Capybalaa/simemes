@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-20">
-      <div className="min-h-dvh relative flex flex-col items-center justify-center pt-20 lg:pt-0">
+      <div className="min-h-dvh relative flex flex-col items-center justify-center lg:pt-0">
         <Image
           className={[
             'w-[566px] h-[353px] absolute -right-20 -bottom-20',
@@ -85,7 +85,7 @@ export default function Home() {
             Stay in SIMemes
           </h2>
           <button
-            className="bg-[url(/button-y.png)] bg-auto bg-center bg-no-repeat border-2 border-black rounded-tr-lg w-full lg:w-[521px] h-[52px] lg:h-[100px] cursor-pointer"
+            className="bg-[url(/button-y.png)] bg-auto bg-center bg-no-repeat border-2 border-black rounded-lg w-full lg:w-[521px] h-[52px] lg:h-[100px] cursor-pointer"
             onClick={() => setIsRegisterModalOpen(true)}
           >
             <span
@@ -188,22 +188,22 @@ export default function Home() {
                 height={480}
                 alt="about"
               />
-              <h2 className="text-2xl">Poop AI (?)</h2>
+              <h2 className="text-2xl h-16">Poop AI (?)</h2>
 
               <p className="text-lg">
                 <span className="bg-current">
-                  (PoopAI isn&apos;t just another AI NPC)
+                  wwwwwww wwwwww wwww wwwwwww ww www
                 </span>
                 —he&apos;s the ultimate portal between players and the game.
               </p>
               <p className="text-lg">
                 He manages and adapts from{' '}
                 <span className="bg-current">
-                  (real-time updates to exclusive events)
+                  wwwwwwwwww wwwwwww ww wwwwwwwww wwwwwww
                 </span>{' '}
                 and partial token management,{' '}
                 <span className="bg-current">
-                  (all powered by user feedback on social media.)
+                  wwww wwwwwww ww wwww wwwwwwww ww wwwwww wwwwww
                 </span>
               </p>
               <p className="text-lg">This is what we called community first.</p>
@@ -216,7 +216,7 @@ export default function Home() {
                 height={480}
                 alt="about"
               />
-              <h2 className="text-2xl">Gameplay</h2>
+              <h2 className="text-2xl h-16">Fortune favors the wise</h2>
               <p className="text-lg">
                 Every chest, every resource is your chance at fortune—your
                 golden era. it&apos;s all yours for the taking.
@@ -237,7 +237,11 @@ export default function Home() {
                 height={480}
                 alt="about"
               />
-              <h2 className="text-2xl">Friend today, Rivals tomorrow</h2>
+              <h2 className="text-2xl h-16">
+                Friend today
+                <br />
+                Rivals tomorrow
+              </h2>
               <p className="text-lg">
                 Steal what you can, protect what&apos;s yours, and betray while
                 you can. 
@@ -250,6 +254,13 @@ export default function Home() {
         </div>
       </div>
       <div className="min-h-dvh flex flex-col items-center justify-center">
+        <Image
+          className="w-full lg:w-[535px] scale-75 lg:scale-100"
+          src="/toilet3.png"
+          alt="toilet"
+          width={535}
+          height={628}
+        />
         <div className="flex flex-col lg:flex-row items-center justify-center gap-40 mx-auto p-0 lg:p-10 max-w-[1000px]">
           <div className="flex flex-col gap-4 w-100 shrink-0">
             <button
@@ -266,15 +277,10 @@ export default function Home() {
                 join waitlist
               </span>
             </button>
-            <p>COPYRIGHT © 2025 SIMemes ALL RIGHTS RESERVED ®</p>
+            <p className="text-xs text-center">
+              COPYRIGHT © 2025 SIMemes ALL RIGHTS RESERVED ®
+            </p>
           </div>
-          <Image
-            className="w-full lg:w-[535px]"
-            src="/toilet3.png"
-            alt="toilet"
-            width={535}
-            height={628}
-          />
         </div>
       </div>
     </div>
