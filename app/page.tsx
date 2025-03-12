@@ -67,19 +67,19 @@ export default function Home() {
           <Milestone
             value={count}
             steps={[
-              { value: 10_000, label: '10K', bonus: 'Pebbles x50' },
-              { value: 100_000, label: '100K', bonus: 'Poop x1000' },
+              { value: 10_000, label: '10K', bonus: 'Pebble x50' },
+              { value: 50_000, label: '50K', bonus: 'Poop x1M' },
               {
-                value: 250_000,
-                label: '250K',
+                value: 100_000,
+                label: '100K',
                 bonus: 'SIMemes buddy limited edition',
               },
-              { value: 500_000, label: '500K', bonus: 'Chest vouchers x20' },
-              { value: 1_000_000, label: '1M', bonus: '1 % Token allocation' },
+              { value: 250_000, label: '250K', bonus: 'Chest vouchers x20' },
+              { value: 500_000, label: '500K', bonus: '1% SIMemes token allocation' },
             ]}
           />
         </div>
-        <div className="p-4 lg:p-10 lg:absolute lg:left-0 lg:bottom-20 mb-54 lg:mb-0">
+        <div className="p-4 lg:p-10 lg:absolute lg:left-0 lg:bottom-20 mb-54 lg:mb-0 scale-75">
           <h2 className="text-2xl lg:text-5xl mb-2">
             What happens in SIMemes <br />
             Stay in SIMemes
@@ -192,18 +192,18 @@ export default function Home() {
 
               <p className="text-lg">
                 <span className="bg-current">
-                  wwwwwww wwwwww wwww wwwwwww ww www
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                 </span>
                 —he&apos;s the ultimate portal between players and the game.
               </p>
               <p className="text-lg">
                 He manages and adapts from{' '}
                 <span className="bg-current">
-                  wwwwwwwwww wwwwwww ww wwwwwwwww wwwwwww
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>{' '}
                 and partial token management,{' '}
                 <span className="bg-current">
-                  wwww wwwwwww ww wwww wwwwwwww ww wwwwww wwwwww
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
               </p>
               <p className="text-lg">This is what we called community first.</p>
@@ -255,7 +255,7 @@ export default function Home() {
       </div>
       <div className="min-h-dvh flex flex-col items-center justify-center">
         <Image
-          className="w-full lg:w-[535px] scale-75 lg:scale-100"
+          className="w-full lg:w-[535px] scale-75"
           src="/toilet3.png"
           alt="toilet"
           width={535}
@@ -264,7 +264,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-40 mx-auto p-0 lg:p-10 max-w-[1000px]">
           <div className="flex flex-col gap-4 w-100 shrink-0">
             <button
-              className="bg-[url(/button-y.png)] bg-contain bg-center bg-no-repeat w-full aspect-[1042/200] cursor-pointer"
+              className="bg-[url(/button-y.png)] bg-auto bg-center bg-no-repeat border-2 border-black rounded-lg w-full lg:w-[521px] h-[52px] lg:h-[100px] cursor-pointer  scale-75"
               onClick={() => setIsRegisterModalOpen(true)}
             >
               <span

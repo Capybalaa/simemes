@@ -45,7 +45,7 @@ export default function RootLayout({
               <div className="hidden lg:flex flex-row items-center gap-10 capitalize text-[32px]">
                 <Link href="#story">story</Link>
                 <Link href="#about">about</Link>
-                <Link href="#">
+                <Link href="https://x.com/simemesdotxyz">
                   <Image
                     className="w-12 h-12"
                     src="/social-x.png"
@@ -54,7 +54,7 @@ export default function RootLayout({
                     height={96}
                   />
                 </Link>{' '}
-                <Link href="#">
+                <Link href="https://discord.gg/ekEQy4PQ">
                   <Image
                     className="w-12 h-12"
                     src="/social-discord.png"
